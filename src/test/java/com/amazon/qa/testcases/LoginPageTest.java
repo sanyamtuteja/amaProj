@@ -31,11 +31,10 @@ public class LoginPageTest extends TestBase {
 
 		System.out.println("Title of the page is:" + actualTitle);
 
-		// Assert.assertEquals(title, actualTitle);
+		Assert.assertEquals(actualTitle, "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
 	}
 
-	@Test(priority =2
-			)
+	@Test(priority =2)
 	public void testLogin() {
 		homepage = loginpage.validateLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}

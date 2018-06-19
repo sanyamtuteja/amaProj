@@ -8,6 +8,7 @@
           <include name="tearDown"/>
           <include name="seUp"/>
           <include name="testLogin"/>
+          <include name="testLoginPageTitle"/>
         </methods>
       </class> <!-- com.amazon.qa.testcases.LoginPageTest -->
     </classes>

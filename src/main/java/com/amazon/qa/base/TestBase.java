@@ -19,31 +19,29 @@ public class TestBase {
 
 	public TestBase() {
 
-		/*try {
-			System.out.println("here 3");
+		try {
 			prop = new Properties();
-
-			FileInputStream fis = new FileInputStream(System.getProperty(
-					"C:\\Users\\TAARUSH\\workspace\\AmazonTest\\src\\main\\java\\com\\amazon\\qa\\config\\config.properties"));
+			
+			FileInputStream fis = new FileInputStream(
+					"C:\\Users\\tutejasa\\Desktop\\Projects\\amaProj\\src\\main\\java\\com\\amazon\\qa\\config\\config.properties");
 			prop.load(fis);
-			System.out.println("here 2");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
-*/
+
 	}
 
 	public static void initialize() {
-		String BrowserName ="chrome"; 
-				//prop.getProperty("browser");
+		String BrowserName = prop.getProperty("browser");
+	
 		System.out.println("here 1");
 		if (BrowserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (BrowserName.equalsIgnoreCase("Firefox")) {
-			System.setProperty("webdriver.gecko.driver", "E:\\Selenium\\geckodriver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 			driver = new FirefoxDriver();
 		}
 
@@ -52,7 +50,7 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
-		driver.get("https://www.amazon.in");
+		driver.get(prop.getProperty("url"));
 
 	}
 }

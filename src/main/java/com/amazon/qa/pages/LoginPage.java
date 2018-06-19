@@ -9,6 +9,9 @@ import com.amazon.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 
+	@FindBy(xpath = ".//*[@id='nav-link-yourAccount']/span[2]")
+	WebElement Hellobtn;
+	
 	@FindBy(xpath = ".//span[@class='nav-action-inner']")
 	WebElement SignInBtn;
 
@@ -18,7 +21,7 @@ public class LoginPage extends TestBase {
 	@FindBy(id = "continue")
 	WebElement contBtn;
 
-	@FindBy(id = "password")
+	@FindBy(id = "ap_password")
 	WebElement password;
 
 	@FindBy(id = "signInSubmit")
@@ -36,7 +39,9 @@ public class LoginPage extends TestBase {
 	}
 
 	public HomePage validateLogin(String un, String pw){
-		SignInBtn.click();
+		
+		Hellobtn.click();
+		//SignInBtn.click();
 		username.sendKeys(un);
 		contBtn.click();
 		password.sendKeys(pw);
