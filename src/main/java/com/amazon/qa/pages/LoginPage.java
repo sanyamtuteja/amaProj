@@ -9,7 +9,7 @@ import com.amazon.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 
-	@FindBy(xpath = ".//*[@id='nav-link-yourAccount']/span[2]")
+	@FindBy(xpath = "//span[contains(text(),'Hello. Sign in')]")
 	WebElement Hellobtn;
 	
 	@FindBy(xpath = ".//span[@class='nav-action-inner']")
