@@ -31,7 +31,7 @@ public class LoginPageTest extends TestBase {
 
 		System.out.println("Title of the page is:" + actualTitle);
 
-		Assert.assertEquals(actualTitle, "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
+		Assert.assertEquals(actualTitle, "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in tdata");
 	}
 
 	@Test(priority =2)
